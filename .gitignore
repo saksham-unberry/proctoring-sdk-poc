@@ -36,7 +36,7 @@ models/
 images/
 images.zip
 images_*/
-pynb_pipelines/
+
 .cursorrules
 .mcp.json
 .opencode.json
