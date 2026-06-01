@@ -1,0 +1,64 @@
+[paths]
+image_dir = "images"
+output_dir = "outputs/rtdetr_accuracy_run"
+face_detector_model = "models/face_detector.tflite"
+face_landmarker_model = "models/face_landmarker.task"
+
+[object_detection]
+# RT-DETR uses the same COCO class ids as the YOLO baseline.
+family = "rtdetr"
+models = ["models/rtdetr-l.pt"]
+image_size = 960
+global_confidence = 0.10
+fusion_iou = 0.55
+primary_model = "rtdetr"
+edge_crop_enabled = true
+edge_crop_ratio = 0.35
+edge_crop_min_confidence = 0.12
+edge_crop_labels = ["cell_phone"]
+
+[object_detection.class_thresholds]
+person = 0.35
+cell_phone = 0.18
+book = 0.30
+laptop = 0.40
+monitor = 0.40
+keyboard = 0.35
+mouse = 0.35
+
+[face_detection]
+confidence = 0.45
+landmarker_faces = 3
+
+[quality]
+blur_threshold = 55.0
+low_light_threshold = 50.0
+overexposed_threshold = 220.0
+blocked_brightness = 20.0
+blocked_std = 10.0
+
+[extra_person]
+proximity_high = 0.22
+proximity_medium = 0.40
+size_ratio_high = 0.55
+size_ratio_medium = 0.30
+ignore_size_ratio = 0.10
+
+[engagement]
+yaw_toward_degrees = 20.0
+gaze_toward = 0.25
+
+[object_filters]
+face_phone_min_confidence = 0.75
+
+[temporal]
+fps = 1.0
+window_seconds = 10.0
+presence_medium_ratio = 0.30
+close_medium_ratio = 0.20
+presence_high_ratio = 0.50
+close_high_ratio = 0.30
+close_distance = 0.25
+head_pose_ratio = 0.20
+audio_ratio = 0.20
+other_flag_ratio = 0.15

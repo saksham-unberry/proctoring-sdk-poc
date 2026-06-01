@@ -1,0 +1,46 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+.env
+
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Local tooling state
+.code-review-graph/
+.claude/
+.gemini/
+.kiro/
+.qoder/
+.vscode/
+
+# Generated run artifacts
+outputs/
+outputs_*/
+outputs_accuracytoml/
+network.har
+*.har
+
+# Large local model artifacts
+models/
+*.pt
+*.onnx
+*.tflite
+*.task
+
+# Dataset/archive scratch copies
+images/
+images.zip
+images_*/
+pynb_pipelines/
+.cursorrules
+.mcp.json
+.opencode.json
+.windsurfrules
+CLAUDE.md
+GEMINI.md
+QODER.md
